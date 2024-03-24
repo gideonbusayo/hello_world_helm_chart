@@ -1,0 +1,13 @@
+t
+replicaCount: 1
+
+Image:
+  Image: hngtech11/hello-world:v1
+  Name: hello
+  Tag: "v1"
+
+Ports:
+  HelloClusterPort: 8080
+  HelloPodPort: 80
+
+Environment: dev #or prod

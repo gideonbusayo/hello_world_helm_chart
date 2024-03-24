@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-{{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-{{ .Values.Environment }}
+  template:
+    metadata:
+      labels:
+        app: hello-{{ .Values.Environment }}
+    spec:
+      containers:
+      - name: {{ .Values.Image.Name }}
+        image: {{ .Values.Image.Image }}
+
+
